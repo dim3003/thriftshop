@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'clothes/show'
+
   get 'home/index'
 
   get 'clothe/home'
