@@ -1,23 +1,7 @@
 <div class="card">
-  <%= image_tag("hoodie1.jpg") %>
+  <%= image_tag(photo_url) %>
   <div class="card__intro">
-    <h4 class="card__title">Hoodie</h4>
-    <span class="card__desc">A small description of the product...</span>
-  </div>
-</div>
-
-<div class="card">
-  <%= image_tag("t-shirt1.jpg") %>
-  <div class="card__intro">
-    <h4 class="card__title">T-shirt</h4>
-    <span class="card__desc">A small description of the product...</span>
-  </div>
-</div>
-
-<div class="card">
-  <%= image_tag("t-shirt2.jpg") %>
-  <div class="card__intro">
-    <h4 class="card__title">T-shirt</h4>
-    <span class="card__desc">A small description of the product...</span>
+    <h4 class="card__title"><%= card_title %></h4>
+    <span class="card__desc"><%= description %></span>
   </div>
 </div>
