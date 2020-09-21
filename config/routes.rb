@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'item/new'
+
+  get 'item/showindex'
+
   get 'clothes/show'
 
   get 'home/index'
