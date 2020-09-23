@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-  get 'item/new'
 
-  get 'item/showindex'
-
-  get 'clothes/show'
+  root to: 'home#index'
 
   get 'home/index'
+
+  resources :item, only: [:new, :show]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
