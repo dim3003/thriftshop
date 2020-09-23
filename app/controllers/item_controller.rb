@@ -2,6 +2,7 @@ class ItemController < ApplicationController
   def new
   end
 
-  def showindex
+  def show
+    @items = Item.all
   end
 end
