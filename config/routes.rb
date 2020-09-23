@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   get 'home', to: 'home#index'
 
-  resources :item, only: [:new, :show]
+  get '/:id/show', to: 'item#show', as: 'item'
+
+  resources :item, only: [:new]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
