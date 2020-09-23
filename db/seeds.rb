@@ -17,6 +17,52 @@ item1 = Item.create! title: 'T-shirt',
                     description: 'A plain black T-shirt'
 
 
-item1 = Item.create! title: 'Hoodie',
-                     photo_url: 'hoodie1.jpg',
-                     description: 'A plain hoodie'
+
+item1 = Item.create! title: 'T-shirt',
+                     photo_url: 'tshirt1.jpg',
+                     description: 'A green T-shirt which has a longer description than all of the other stuff.'
+
+
+item1 = Item.create! title: 'T-shirt',
+                    photo_url: 'tshirt2.jpg',
+                    description: 'A plain black T-shirt'
+
+
+item1 = Item.create! title: 'T-shirt',
+                     photo_url: 'tshirt1.jpg',
+                     description: 'A green T-shirt which has a longer description than all of the other stuff.'
+
+
+item1 = Item.create! title: 'T-shirt',
+                    photo_url: 'tshirt2.jpg',
+                    description: 'A plain black T-shirt'
+
+item1 = Item.create! title: 'T-shirt',
+                     photo_url: 'tshirt1.jpg',
+                     description: 'A green T-shirt which has a longer description than all of the other stuff.'
+
+
+item1 = Item.create! title: 'T-shirt',
+                    photo_url: 'tshirt2.jpg',
+                    description: 'A plain black T-shirt'
+
+
+
+item1 = Item.create! title: 'T-shirt',
+                     photo_url: 'tshirt1.jpg',
+                     description: 'A green T-shirt which has a longer description than all of the other stuff.'
+
+
+item1 = Item.create! title: 'T-shirt',
+                    photo_url: 'tshirt2.jpg',
+                    description: 'A plain black T-shirt'
+
+
+item1 = Item.create! title: 'T-shirt',
+                     photo_url: 'tshirt1.jpg',
+                     description: 'A green T-shirt which has a longer description than all of the other stuff.'
+
+
+item1 = Item.create! title: 'T-shirt',
+                    photo_url: 'tshirt2.jpg',
+                    description: 'A plain black T-shirt'

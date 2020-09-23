@@ -1,7 +1,20 @@
-<div>
-<%= render(partial: 'item_card',
-           locals: {card_title: @item.title,
-                    description: @item.description,
-                    photo_url: @item.photo_url,
-                    item: @item}) %>
+<div class="item_show">
+  <div class="item_show__img">
+    <%= image_tag(@item.photo_url)%>
+  </div>
+  <div class="item_show__info">
+    <div class="item_show__title">
+      <h3>
+        <%= @item.title %>
+      </h3>
+    </div>
+    <div class="item_show__footer">
+      <div class="item_show__description">
+        <%= @item.description %>
+      </div>
+      <div class="item_show__add">
+        <%= button_tag 'ADD TO CART' %>
+      </div>
+    </div>
+  </div>
 </div>

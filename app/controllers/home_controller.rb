@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @items = Item.all
+    @items = Item.all.most_recent
   end
 end
