@@ -3,11 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .nav-header{
+  flex-grow: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  padding: 0.5em 1em;
+  margin: 0 2em;
 }
 
 .nav-links{
@@ -17,13 +18,23 @@
     }
 }
 
-.main-title{text-align: center;}
+.main-title{
+  text-align: center;
+  height: 20%;
+
+  margin: 1em 0 2.4em;
+
+  em {
+    font-size: 0.9em;
+  }
+}
+
+
 
 .home_cards{
   display: flex;
   justify-content: center;
-  align-items: stretch;
 
-  margin: 2em 4em 6em;
+  margin-bottom: 3em;
 
 }

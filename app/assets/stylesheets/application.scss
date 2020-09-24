@@ -21,7 +21,8 @@
 
 @import 'item_card';
 
-body{font-family: 'Roboto Mono', monospace;
+body{
+  font-family: 'Roboto Mono', monospace;
 }
 
 
@@ -33,12 +34,32 @@ a{text-decoration: none;
   color:#000;
 }
 
-footer{background-color: black;
-       font-size: 0.8em;
-       color: #fff;
-       a{color:#fff;}
+header{
+  height: 8vh;
 
-       padding: 3em 2em;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#main{
+  height: 83vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+footer{
+  height: 9vh;
+
+  background-color: black;
+  font-size: 0.8em;
+  color: #fff;
+  a{color:#fff;}
+
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 hr{margin:0;
