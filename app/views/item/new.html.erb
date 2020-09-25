@@ -1,2 +1,23 @@
-<h1>Item#new</h1>
-<p>Find me in app/views/item/new.html.erb</p>
+<% if(@item.errors.any?) %>
+  <div class="alert alert--wide">
+    <%= @item.errors.full_messages.join('<br />') %>
+  </div>
+<% end %>
+<%= form_for(@item, html: {}) do |form| %>
+  <div class="">
+    <%= form.label(:title, class: '') %>
+    <%= form.text_field(:title, class: '') %>
+  </div>
+  <div class="">
+    <%= form.label(:photo_url, class: '') %>
+    <%= form.text_field(:photo_url, class: '') %>
+  </div>
+  <div class="">
+    <%= form.label(:description, class: '') %>
+    <%= form.text_area(:description, class: '') %>
+  </div>
+  <div class="">
+    <a class="" href="#cancel">Cancel</a>
+    <%= form.submit(class:"")%>
+  </div>
+<% end %>
