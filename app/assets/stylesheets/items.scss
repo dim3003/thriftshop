@@ -35,6 +35,12 @@
   margin: 1em;
 }
 
+.item_show__price{
+  text-align:center;
+  font-size: 0.9em;
+  font-style: italic;
+}
+
 .item_show__footer{
   flex-grow:1;
   display: flex;

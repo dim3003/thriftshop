@@ -3,7 +3,7 @@
   <% @items.each do |item|%>
     <li>
       <%= render(partial: 'item_card',
-                 locals: {card_title: item.title, photo_url: item.photo_url, item: item})%>
+                 locals: {card_title: item.title, price: item.price, photo_url: item.photo_url, item: item})%>
     </li>
   <% end %>
 </div>
