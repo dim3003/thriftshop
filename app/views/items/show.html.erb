@@ -1,5 +1,6 @@
 <div class="item_show">
-  <%= image_tag(@item.photo_url)%>
+  <%= render(partial: 'item_photo',
+            locals:{photo_url: @item.photo_url})%>
   <div class="item_show__info">
     <div class="item_show__title">
       <h3>

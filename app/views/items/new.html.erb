@@ -3,21 +3,21 @@
     <%= @item.errors.full_messages.join('<br />') %>
   </div>
 <% end %>
-<%= form_for(@item, html: {}) do |form| %>
-  <div class="">
-    <%= form.label(:title, class: '') %>
-    <%= form.text_field(:title, class: '') %>
+<%= form_for(@item, html: {class: 'form_new_model'}) do |form| %>
+  <div class="input">
+    <%= form.label(:title, class: 'input__label') %>
+    <%= form.text_field(:title, class: 'input__text') %>
   </div>
-  <div class="">
-    <%= form.label(:photo_url, class: '') %>
-    <%= form.text_field(:photo_url, class: '') %>
+  <div class="input">
+    <%= form.label(:photo_url, class: 'input__label') %>
+    <%= form.text_field(:photo_url, class: 'input__text') %>
   </div>
-  <div class="">
-    <%= form.label(:description, class: '') %>
-    <%= form.text_area(:description, class: '') %>
+  <div class="input">
+    <%= form.label(:description, class: 'input__label') %>
+    <%= form.text_area(:description, class: 'input__text_area') %>
   </div>
-  <div class="">
-    <a class="" href="#cancel">Cancel</a>
-    <%= form.submit(class:"")%>
+  <div class="input">
+    <%= link_to "Cancel", root_path %>
+    <%= form.submit(class:"btn btn__submit")%>
   </div>
 <% end %>

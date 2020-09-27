@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Idea.new(item_resource_params)
+    @item = Item.new(item_resource_params)
     if(@item.save)
       redirect_to items_path
     else
@@ -24,8 +24,8 @@ class ItemsController < ApplicationController
 
   private
 
-  def idea_resource_params
-    params.require(:idea).permit(:title, :photo_url, :done_count, :description)
+  def item_resource_params
+    params.require(:item).permit(:title, :photo_url, :description)
   end
 
 end

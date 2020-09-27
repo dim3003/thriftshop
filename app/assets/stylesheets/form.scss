@@ -1,0 +1,21 @@
+.form_new_model{
+  width: 40%;
+  margin:auto;
+}
+
+
+.form_new_model .input{
+  padding: 1em 0;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.input__text {
+  width: 50%;
+}
+
+.input__text_area{
+  width: 50%;
+  height: 100px;
+}

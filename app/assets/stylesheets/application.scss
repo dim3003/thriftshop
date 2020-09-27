@@ -19,8 +19,6 @@
  font-family: 'Roboto Mono', monospace;
 */
 
-@import 'item_card';
-
 body{
   font-family: 'Roboto Mono', monospace;
 }
@@ -36,6 +34,7 @@ a{text-decoration: none;
 
 header{
   height: 8vh;
+  position:relative;
 
   display:flex;
   flex-direction: column;
@@ -51,6 +50,7 @@ header{
 
 footer{
   height: 9vh;
+  position: relative;
 
   background-color: black;
   font-size: 0.8em;
