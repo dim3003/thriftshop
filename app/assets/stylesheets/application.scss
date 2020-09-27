@@ -48,6 +48,11 @@ header{
   flex-direction: column;
 }
 
+#main--content{
+  display: flex;
+  flex-direction: column;
+}
+
 footer{
   height: 9vh;
   position: relative;

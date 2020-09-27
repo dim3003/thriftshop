@@ -1,11 +1,8 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.all-items{display:flex;
-  flex-wrap:wrap;
-}
 
-.all-items img{height:150px;}
+/* ITEMS SHOW */
 
 .item_show{
   display: flex;
@@ -57,4 +54,21 @@
 
 .item_show__add{
   margin:0 auto;
+}
+
+/* INDEX ITEMS */
+
+.items--index{
+  display: flex;
+  justify-content: center;
+  flex-wrap:wrap;
+
+  height: 50%;
+  width: 100%;
+
+  padding: 2em;
+
+  .card{
+    padding: 2em 1em;
+  }
 }

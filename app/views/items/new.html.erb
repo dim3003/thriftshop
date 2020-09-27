@@ -1,27 +1,29 @@
-<% if(@item.errors.any?) %>
-  <div class="alert alert--wide">
-    <%= @item.errors.full_messages.join('<br />') %>
-  </div>
-<% end %>
-<%= form_for(@item, html: {class: 'form_new_model'}) do |form| %>
-  <div class="input">
-    <%= form.label(:title, class: 'input__label') %>
-    <%= form.text_field(:title, class: 'input__text') %>
-  </div>
-  <div class="input">
-    <%= form.label(:price, class: 'input__label') %>
-    <%= form.text_field(:price, class: 'input__text') %>
-  </div>
-  <div class="input">
-    <%= form.label(:photo_url, class: 'input__label') %>
-    <%= form.text_field(:photo_url, class: 'input__text') %>
-  </div>
-  <div class="input">
-    <%= form.label(:description, class: 'input__label') %>
-    <%= form.text_area(:description, class: 'input__text_area') %>
-  </div>
-  <div class="input">
-    <%= link_to "Cancel", root_path %>
-    <%= form.submit(class:"btn btn__submit")%>
-  </div>
-<% end %>
+<div id="main">
+  <% if(@item.errors.any?) %>
+    <div class="alert alert--wide">
+      <%= @item.errors.full_messages.join('<br />') %>
+    </div>
+  <% end %>
+  <%= form_for(@item, html: {class: 'form_new_model'}) do |form| %>
+    <div class="input">
+      <%= form.label(:title, class: 'input__label') %>
+      <%= form.text_field(:title, class: 'input__text') %>
+    </div>
+    <div class="input">
+      <%= form.label(:price, class: 'input__label') %>
+      <%= form.text_field(:price, class: 'input__text') %>
+    </div>
+    <div class="input">
+      <%= form.label(:photo_url, class: 'input__label') %>
+      <%= form.text_field(:photo_url, class: 'input__text') %>
+    </div>
+    <div class="input">
+      <%= form.label(:description, class: 'input__label') %>
+      <%= form.text_area(:description, class: 'input__text_area') %>
+    </div>
+    <div class="input">
+      <%= link_to "Cancel", root_path %>
+      <%= form.submit(class:"btn btn__submit")%>
+    </div>
+  <% end %>
+</div

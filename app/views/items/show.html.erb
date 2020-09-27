@@ -1,21 +1,23 @@
-<div class="item_show">
-  <%= render(partial: 'item_photo',
-            locals:{photo_url: @item.photo_url})%>
-  <div class="item_show__info">
-    <div class="item_show__title">
-      <h3>
-        <%= @item.title %>
-      </h3>
-      <div class="item_show__price">
-        <%= @item.price %> CHF
+<div id="main">
+  <div class="item_show">
+    <%= render(partial: 'item_photo',
+              locals:{photo_url: @item.photo_url})%>
+    <div class="item_show__info">
+      <div class="item_show__title">
+        <h3>
+          <%= @item.title %>
+        </h3>
+        <div class="item_show__price">
+          <%= @item.price %> CHF
+        </div>
       </div>
-    </div>
-    <div class="item_show__footer">
-      <div class="item_show__description">
-        <%= @item.description %>
-      </div>
-      <div class="item_show__add">
-        <%= button_tag 'ADD TO CART' %>
+      <div class="item_show__footer">
+        <div class="item_show__description">
+          <%= @item.description %>
+        </div>
+        <div class="item_show__add">
+          <%= button_tag 'ADD TO CART' %>
+        </div>
       </div>
     </div>
   </div>
