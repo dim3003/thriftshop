@@ -1,6 +1,7 @@
 <%= link_to(item_path(item)) do %>
-  <div class="card">    
-      <%= image_tag(photo_url) %>
+  <div class="card">
+      <%= render(partial: 'item_photo',
+                 locals: {photo_url: photo_url}) %>
       <div class="card__intro">
         <h4 class="card__title"><%= card_title %></h4>
       </div>
