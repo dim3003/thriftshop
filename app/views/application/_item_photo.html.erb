@@ -1,5 +1,7 @@
-<% if(photo_url.nil? || photo_url.empty?) %>
-  <%= image_tag('unavailable.jpg', alt: "Unavailable picture") %>
-<% else %>
-  <%= image_tag(photo_url) %>
-<% end %>
+<div>
+  <% if(photo_url.nil? || photo_url.empty?) %>
+    <%= image_tag('unavailable.jpg', alt: "Unavailable picture", class:"card__img") %>
+  <% else %>
+    <%= image_tag(photo_url, class:"card__img")%>
+  <% end %>
+</div>
