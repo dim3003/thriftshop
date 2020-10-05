@@ -6,7 +6,7 @@
 
 .item_show{
   display: flex;
-
+  justify-content: center;
   height: 90%;
   width: 50%;
 
@@ -20,7 +20,6 @@
 
 
 .item_show__info{
-  flex-grow: 1;
 
   background-color: #f9f9f9;
 

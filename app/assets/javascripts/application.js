@@ -13,3 +13,36 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+
+
+
+//Create a loop which use each button model id and stores it in an array as local  and then use this array to display the correct models on the your cart page
+
+window.addEventListener('load', function(){
+  let cart = [];
+
+  let buttons = document.getElementsByClassName("card__add");
+
+  for(let i=0; i< buttons.length; i++){
+    buttons[i].addEventListener('click', function(){
+      let el = this.firstElementChild.textContent.replace(/\s/g,'');
+      let sign = this.lastElementChild;
+      console.log(sign);
+      if (cart.indexOf(el)<0){
+        cart.push(el);
+        localStorage.setItem('cart', cart);
+
+        sign.remove();
+        this.lastElementChild.remove();
+
+        var added = document.createElement("div");
+        added.textContent="ADDED";
+
+        this.appendChild(added);
+      }
+
+    })
+  }
+
+})

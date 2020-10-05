@@ -2,15 +2,12 @@
   <%= link_to(item_path(item)) do %>
     <%= render(partial: 'item_photo',
                locals: {photo_url: photo_url}) %>
-    <div class="card__intro">
+  <% end %>
+  <div class="card__intro">
+    <%= link_to(item_path(item)) do %>
       <h4 class="card__title"><%= card_title %> // <span class="card__price"><%= price %> CHF</span></h4>
-      <div class="card__add">
-        <div>ADD TO CART</div>
-        <svg>
-          <use href="#pluss"></use>
-        </svg>
-      </div>
-
-    </div>
     <% end %>
+    <%= render(partial: "add",
+               locals: {item: item}) %>
+  </div>
 </div>
