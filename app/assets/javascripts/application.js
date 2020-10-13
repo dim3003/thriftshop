@@ -38,6 +38,7 @@ window.addEventListener('load', function(){
 
         var added = document.createElement("div");
         added.textContent="ADDED";
+        added.className="card__add--added"
 
         this.appendChild(added);
       }
