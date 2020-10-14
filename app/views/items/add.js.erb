@@ -1,0 +1,37 @@
+item = ("<%= @item.id %>");
+cart=[];
+if(localStorage.getItem('cart') != null){
+  cart = localStorage.getItem('cart');
+  cart=JSON.parse(cart);
+}
+
+
+
+buttons = document.getElementsByClassName("card__add");
+
+for(let i=0; i< buttons.length; i++){
+
+  sign = buttons[i].lastElementChild;
+
+
+  el=buttons[i].firstElementChild.textContent.replace(/\s/g,'');
+
+  if (el == item){
+    if(cart.indexOf(item)<0){
+      console.log("IN JS MODIFIER");
+      sign.remove();
+      buttons[i].lastElementChild.remove();
+
+      var added = document.createElement("div");
+      added.textContent="ADDED TO CART";
+      added.className="card__add--added"
+
+      buttons[i].appendChild(added);
+      cart.push(item);
+    }
+  }
+}
+
+localStorage.clear();
+
+localStorage.setItem('cart', JSON.stringify(cart));

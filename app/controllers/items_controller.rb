@@ -21,6 +21,10 @@ class ItemsController < ApplicationController
     @items = Item.all
   end
 
+  def add
+    @item = Item.find(params[:item])
+  end
+
 
   private
 

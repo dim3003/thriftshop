@@ -75,14 +75,16 @@
 
   div{
     margin-left: 1em;
+    height:20px;
   }
 
   svg{
     width: 20%;
-    height: 45%;
+    height: 20px;
   }
 }
 
 card__add--added{
+  width: 100%;
   padding: 1em;
 }
