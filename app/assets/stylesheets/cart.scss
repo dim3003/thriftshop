@@ -1,0 +1,23 @@
+// Place all the styles related to the cart controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cart_hide{
+  display: none;
+}
+.cart_row{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1em;
+}
+
+.cart_hr{
+  height: 1px;
+  background-color: #ddd;
+  border: none;
+
+  width: 95%;
+  margin:auto;
+}

@@ -1,0 +1,18 @@
+<div class="all_cart cart_hide">
+  <div class="cart_row">
+    <div class="hidden">
+      <%= item.id %>
+    </div>
+    <%= link_to(item_path(item)) do %>
+      <%= render(partial: 'item_photo',
+                 locals: {photo_url: photo_url}) %>
+    <% end %>
+
+    <h4 class="card__title">
+      <%= card_title %>// <span class="card__price"><%= price %> CHF</span>
+    </h4>
+
+    <button type="button" name="Remove">Remove</button>
+  </div>
+  <hr class="cart_hr">
+</div>
