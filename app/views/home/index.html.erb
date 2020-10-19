@@ -15,3 +15,38 @@
     <% end %>
   </div>
 </div>
+
+<script type="text/javascript">
+  cart=[];
+  if(localStorage.getItem('cart') != null){
+    cart = localStorage.getItem('cart');
+    cart=JSON.parse(cart);
+  }
+
+
+
+  buttons = document.getElementsByClassName("card__add");
+
+  console.log(buttons)
+
+  for(let i=0; i< buttons.length; i++){
+
+    sign = buttons[i].lastElementChild;
+
+
+    el=buttons[i].firstElementChild.textContent.replace(/\s/g,'');
+
+    if(cart.indexOf(el)>=0){
+      console.log(el)
+      sign.remove();
+      buttons[i].lastElementChild.remove();
+
+      var added = document.createElement("div");
+      added.textContent="ADDED TO CART";
+      added.className="card__add--added"
+
+      buttons[i].appendChild(added);
+      cart.push(item);
+    }
+  }
+</script>

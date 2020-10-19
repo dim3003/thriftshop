@@ -6,4 +6,6 @@
       <h4 class="card__title"><%= card_title %> // <span class="card__price"><%= price %> CHF</span></h4>
     </div>
     <% end %>
+    <%= render(partial: "add",
+               locals: {item: item}) %>
 </div>
