@@ -25,6 +25,10 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:item])
   end
 
+  def remove
+    @item = Item.find(params[:item])
+  end
+
 
   private
 

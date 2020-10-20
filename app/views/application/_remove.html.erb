@@ -1,0 +1,11 @@
+<%= form_tag(remove_path, method: :get, remote: true) do %>
+
+  <%= hidden_field_tag('item', item.id)%>
+  <%= button_tag('Remove', class:  'cart__remove') do %>
+    <div class="hidden">
+      <%= item.id %>
+    </div>
+    <div>Remove</div>
+  <% end %>
+
+<% end %>

@@ -12,7 +12,8 @@
       <%= card_title %>// <span class="card__price"><%= price %> CHF</span>
     </h4>
 
-    <button type="button" name="Remove">Remove</button>
+    <%= render(partial: 'remove',
+               locals: {item: item}) %>
   </div>
   <hr class="cart_hr">
 </div>

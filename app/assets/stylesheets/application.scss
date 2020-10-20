@@ -71,10 +71,23 @@ hr{margin:0;
    padding:0;
 }
 
+header hr{
+  box-shadow: 0 2px 5px #ccc;
+}
 .hidden{
   display:none;
 }
 
 .wide{
   width:100%;
+}
+
+.reverse{
+  background-color: #b8ccc5;
+  color: #fff;
+}
+
+.items--index{
+
+  padding:0;
 }

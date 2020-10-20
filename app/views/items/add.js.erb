@@ -23,9 +23,11 @@ for(let i=0; i< buttons.length; i++){
 
       var added = document.createElement("div");
       added.textContent="ADDED TO CART";
-      added.className="card__add--added"
+      added.className="card__add--added";
 
       buttons[i].appendChild(added);
+
+      buttons[i].className = "card__add reverse";
       cart.push(item);
     }
   }
