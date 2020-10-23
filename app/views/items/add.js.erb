@@ -1,6 +1,6 @@
 item = ("<%= @item.id %>");
 cart=[];
-if(localStorage.getItem('cart') != null){
+if(localStorage.getItem('cart').length > 0){
   cart = localStorage.getItem('cart');
   cart=JSON.parse(cart);
 }

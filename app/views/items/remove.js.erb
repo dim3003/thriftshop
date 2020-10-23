@@ -1,8 +1,10 @@
 item = ("<%= @item.id %>");
-cart=[];
 
 cart = localStorage.getItem('cart');
-cart=JSON.parse(cart);
+
+if(cart.length != 0){
+  cart = JSON.parse(cart);
+}
 
 buttons = document.getElementsByClassName("cart__remove");
 
@@ -12,14 +14,20 @@ for(let i=0; i< buttons.length; i++){
 
   if (el == item){
     buttons[i].parentElement.parentElement.parentElement.remove();
-    cart.splice(cart.indexOf(item),1)
-    console.log(cart)
+    cart.splice(cart.indexOf(item),1);
   }
 }
 
+if(cart.length<=1){
+
+  let mainDiv = document.getElementsByTagName("div")[1];
+  mainDiv.id="main";
+
+}
+
 if(cart.length==0){
-  nxtBtn = document.getElementById("nextRow");
-  nxtBtn.remove()
+  let nxtBtn = document.getElementById("nextRow");
+  nxtBtn.remove();
 }
 
 localStorage.clear();

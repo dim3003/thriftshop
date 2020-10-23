@@ -19,7 +19,9 @@
 
 //Create a loop which use each button model id and stores it in an array as local  and then use this array to display the correct models on the your cart page
 
-let cart = [];
+if (localStorage.getItem('cart')==null){
+  localStorage.setItem('cart', '');
+}
 let item;
 let buttons;
 let el;

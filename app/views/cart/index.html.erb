@@ -9,8 +9,10 @@
   </div>
   <script type="text/javascript">
 
-    cart = localStorage.getItem('cart');
-    cart=JSON.parse(cart);
+    if(localStorage.getItem('cart').length > 0){
+      cart = localStorage.getItem('cart');
+      cart=JSON.parse(cart);
+    }
 
     if(cart.length == 0){
       el = document.getElementById("no-item");
