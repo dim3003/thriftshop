@@ -1,35 +1,35 @@
 <div id="main">
   <h2 class="form--title">Delivery address</h2>
 
-  <%= form_for(@address, html: { class: 'form_new_model' }, :url => '/') do |form| %>
+  <%= form_tag(addressPOST_path, class: 'form_new_model') do %>
 
     <div class="input">
-      <%= form.label(:name, "Last name", class: 'input-group__label') %>
-      <%= form.text_field(:name, class: 'input__text')%>
+      <label for="name" class='input-group__label'>Last name</label>
+      <%= text_field_tag(:name, nil, class: 'input__text')%>
     </div>
 
     <div class="input">
-      <%= form.label(:Firstname, "First name", class: 'input-group__label') %>
-      <%= form.text_field(:Firstname, class: 'input__text')%>
+      <label for="Firstname" class='input-group__label'>First name</label>
+      <%= text_field_tag(:Firstname, nil, class: 'input__text')%>
     </div>
 
     <div class="input">
-      <%= form.label(:email, class: 'input-group__label') %>
-      <%= form.text_field(:email, class: 'input__text')%>
+      <label for="email" class='input-group__label'>Email</label>
+      <%= text_field_tag(:email, nil, class: 'input__text')%>
     </div>
 
     <div class="input">
-      <%= form.label(:street, class: 'input-group__label') %>
-      <%= form.text_field(:street, class: 'input__text')%>
+      <label for="street" class='input-group__label'>Street</label>
+      <%= text_field_tag(:street, nil, class: 'input__text')%>
     </div>
 
     <div class="input">
-      <%= form.label(:postalCode, class: 'input-group__label') %>
-      <%= form.text_field(:postalCode, class: 'input__text')%>
+      <label for="postalCode" class='input-group__label'>Postal code</label>
+      <%= text_field_tag(:postalCode, nil, class: 'input__text')%>
     </div>
 
     <div class="input__submit">
-      <%= form.submit('Next', class:"cart_nextBtn hidden")%>
+      <%= button_tag('Next', class:"cart_nextBtn hidden")%>
     </div>
 
   <% end %>

@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   get '/cart/addressAJAX', to: 'cart#addressAJAX', as: 'addressAJAX'
 
+  post '/cart/addressPOST', to: 'cart#addressPOST', as: 'addressPOST'
+
   resources :items
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
