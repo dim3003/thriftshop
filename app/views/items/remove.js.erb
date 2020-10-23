@@ -17,6 +17,11 @@ for(let i=0; i< buttons.length; i++){
   }
 }
 
+if(cart.length==0){
+  nxtBtn = document.getElementById("nextRow");
+  nxtBtn.remove()
+}
+
 localStorage.clear();
 
 localStorage.setItem('cart', JSON.stringify(cart));

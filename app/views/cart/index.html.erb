@@ -1,25 +1,58 @@
-<% @items.each do |item|%>
-    <%= render(partial: 'cart_item',
-               locals: {card_title: item.title, price: item.price, photo_url: item.photo_url, item: item})%>
-<% end %>
-<script type="text/javascript">
-  cart=[];
-  if(localStorage.getItem('cart') != null){
+<div id="main">
+  <div id="no-item" class="hidden">
+  </div>
+  <div id="all-items">
+    <% @items.each do |item|%>
+        <%= render(partial: 'cart_item',
+                   locals: {card_title: item.title, price: item.price, photo_url: item.photo_url, item: item})%>
+    <% end %>
+  </div>
+  <script type="text/javascript">
+
     cart = localStorage.getItem('cart');
     cart=JSON.parse(cart);
-  }
 
-  items = document.getElementsByClassName("all_cart");
-
-  console.log(items);
-  for(let i=0; i< items.length; i++){
-        console.log(el);
-    el=items[i].firstElementChild.firstElementChild.textContent.replace(/\s/g,'');
-    console.log(el);
-
-    if(cart.indexOf(el)>=0){
-      items[i].className="all_cart";
-      console.log("DJWN");
+    if(cart.length == 0){
+      el = document.getElementById("no-item");
+      el.className="";
+      el.innerText="No items in your cart... Click on 'add to cart' to see it here."
+    } else if (cart.length == 1){
+    } else {
+      main = document.getElementById("main");
+      main.id ="";
     }
-  }
-</script>
+
+    items = document.getElementsByClassName("all_cart");
+
+    for(let i=0; i< items.length; i++){
+      el=items[i].firstElementChild.firstElementChild.textContent.replace(/\s/g,'');
+
+      if(cart.indexOf(el)>=0){
+        items[i].className="all_cart";
+      }
+    }
+
+    if(cart.length != 0){
+
+      var next = document.createElement("btn");
+      next.textContent="Next";
+      next.setAttribute("name", "next");
+      next.setAttribute("class", "cart_nextBtn");
+
+      var link = document.createElement("a");
+      link.setAttribute("href", "/cart/address")
+      link.appendChild(next);
+
+      var nextRow = document.createElement("div");
+      nextRow.setAttribute("class","cart_nextBtnRow");
+      nextRow.setAttribute("id", "nextRow")
+      nextRow.appendChild(link);
+
+
+      allItems = document.getElementById("all-items");
+
+      allItems.appendChild(nextRow);
+    }
+
+  </script>
+</div>

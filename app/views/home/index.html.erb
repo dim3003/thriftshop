@@ -27,8 +27,6 @@
 
   buttons = document.getElementsByClassName("card__add");
 
-  console.log(buttons)
-
   for(let i=0; i< buttons.length; i++){
 
     sign = buttons[i].lastElementChild;
@@ -37,7 +35,6 @@
     el=buttons[i].firstElementChild.textContent.replace(/\s/g,'');
 
     if(cart.indexOf(el)>=0){
-      console.log(el)
       sign.remove();
       buttons[i].lastElementChild.remove();
 
@@ -48,5 +45,11 @@
       buttons[i].appendChild(added);
       cart.push(item);
     }
+  }
+
+  var cardImg = document.getElementsByClassName("card__img");
+  console.log(cardImg);
+  for(let i=0; i< cardImg.length; i++){
+    cardImg[i].className="card__img img--home";
   }
 </script>
