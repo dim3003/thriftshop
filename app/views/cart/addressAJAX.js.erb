@@ -13,6 +13,9 @@ user.push(postalCode);
 
 localStorage.setItem('user', user);
 
+main = document.getElementById("address_title").parentElement;
+main.setAttribute("id", "main");
+
 error = document.getElementById("errorMsg");
 error.firstElementChild.remove()
 errorBox = document.createElement("div");
@@ -27,22 +30,22 @@ function addError(el) {
   errorBox.appendChild(p);
 }
 
-if(0>name.length>30){
+if(name.length ==0 || name.length>30){
   addError("There seems to be an error with your name.");
 }
 
-if(0>firstname.length>30){
+if(firstname.length == 0 || firstname.length > 30){
   addError("There seems to be an error with your first name")
 }
 
-if(mailformat.test(email.value) != true){
+if(mailformat.test(email) == false){
   addError("Your email is not written correctly");
 }
 
 
-console.log(error.firstElementChild.firstElementChild)
-
-if(error.firstElementChild.firstElementChild != ""){
+if(error.firstElementChild.firstElementChild != null){
   main = document.getElementById("main");
   main.id ="";
+} else {
+  error.Classname="hidden";
 }
