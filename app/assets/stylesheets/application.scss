@@ -53,6 +53,12 @@ header{
   flex-direction: column;
 }
 
+#errorMsg{
+  color: red;
+  padding: 1em 0 2em;
+  text-align: center;
+}
+
 footer{
   height: 9vh;
   position: relative;
@@ -74,6 +80,7 @@ hr{margin:0;
 header hr{
   box-shadow: 0 2px 5px #ccc;
 }
+
 .hidden{
   display:none;
 }

@@ -1,1 +1,48 @@
 
+name = document.getElementById('name').value;
+user.push(name);
+firstname = document.getElementById('Firstname').value;
+user.push(firstname);
+email = document.getElementById('email').value;
+user.push(email);
+street = document.getElementById('street').value;
+user.push(street);
+postalCode = document.getElementById('postalCode').value;
+user.push(postalCode);
+
+
+localStorage.setItem('user', user);
+
+error = document.getElementById("errorMsg");
+error.firstElementChild.remove()
+errorBox = document.createElement("div");
+errorBox.setAttribute("id", "errorBox");
+error.appendChild(errorBox);
+
+function addError(el) {
+  error.className = "";
+  let p = document.createElement("p");
+  let textNode = document.createTextNode(el);
+  p.appendChild(textNode);
+  errorBox.appendChild(p);
+}
+
+if(0>name.length>30){
+  addError("There seems to be an error with your name.");
+}
+
+if(0>firstname.length>30){
+  addError("There seems to be an error with your first name")
+}
+
+if(mailformat.test(email.value) != true){
+  addError("Your email is not written correctly");
+}
+
+
+console.log(error.firstElementChild.firstElementChild)
+
+if(error.firstElementChild.firstElementChild != ""){
+  main = document.getElementById("main");
+  main.id ="";
+}

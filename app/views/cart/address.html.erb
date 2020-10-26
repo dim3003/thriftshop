@@ -33,6 +33,10 @@
     </div>
 
   <% end %>
+  <div id="errorMsg" class="hidden">
+    <div id="errorBox">
+    </div>
+  </div>
 
   <div class="input__submit input__submit--nomargin">
     <%= form_tag(addressAJAX_path, method: :get, remote: true) do %>

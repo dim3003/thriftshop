@@ -10,6 +10,9 @@ class CartController < ApplicationController
   def addressAJAX
   end
 
+  def addressPOST
+  end
+
   private
 
   def address_resource_params
