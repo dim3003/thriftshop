@@ -1,3 +1,4 @@
+user = [];
 
 name = document.getElementById('name').value;
 user.push(name);
@@ -9,9 +10,11 @@ street = document.getElementById('street').value;
 user.push(street);
 postalCode = document.getElementById('postalCode').value;
 user.push(postalCode);
-
+postalCode = parseInt(postalCode);
+realBtn = document.getElementById("nextBtnReal");
 
 localStorage.setItem('user', user);
+
 
 main = document.getElementById("address_title").parentElement;
 main.setAttribute("id", "main");
@@ -35,17 +38,25 @@ if(name.length ==0 || name.length>30){
 }
 
 if(firstname.length == 0 || firstname.length > 30){
-  addError("There seems to be an error with your first name")
+  addError("There seems to be an error with your first name.")
 }
 
 if(mailformat.test(email) == false){
-  addError("Your email is not written correctly");
+  addError("Your email is not written correctly.");
 }
 
+if(street.length == 0 || street.length > 30){
+  addError("There seems to be an error with the street your added.")
+}
+
+if(postalCode == NaN || postalCode < 1000 || postalCode > 9999 || postalCode == undefined){
+  addError("We only deliver to Swiss postal codes sorry.")
+}
 
 if(error.firstElementChild.firstElementChild != null){
   main = document.getElementById("main");
   main.id ="";
 } else {
-  error.Classname="hidden";
+  error.className="hidden";
+  realBtn.click();
 }

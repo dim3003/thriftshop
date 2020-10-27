@@ -16,7 +16,9 @@ Rails.application.routes.draw do
 
   get '/cart/addressAJAX', to: 'cart#addressAJAX', as: 'addressAJAX'
 
-  post '/cart/addressPOST', to: 'cart#addressPOST', as: 'addressPOST'
+  get '/cart/payment', to: 'cart#payment', as: 'payment'
+
+
 
   resources :items
 

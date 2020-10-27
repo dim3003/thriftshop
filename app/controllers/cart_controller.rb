@@ -10,13 +10,13 @@ class CartController < ApplicationController
   def addressAJAX
   end
 
-  def addressPOST
+  def payment
   end
 
   private
 
   def address_resource_params
-    params.require(:address).permit(:name, :email, :street, :postalCode)
+    params.require(:address).permit(:name, :firstname, :email, :street, :postalCode)
   end
 
 end

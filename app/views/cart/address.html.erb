@@ -1,7 +1,7 @@
 <div id="main">
   <h2 id="address_title" class="form--title">Delivery address</h2>
 
-  <%= form_tag(addressPOST_path, class: 'form_new_model') do %>
+  <%= form_tag(address_path, class: 'form_new_model') do %>
 
     <div class="input">
       <label for="name" class='input-group__label'>Last name</label>
@@ -27,12 +27,12 @@
       <label for="postalCode" class='input-group__label'>Postal code</label>
       <%= text_field_tag(:postalCode, nil, class: 'input__text')%>
     </div>
-
-    <div class="input__submit">
-      <%= button_tag('Next', class:"cart_nextBtn hidden")%>
-    </div>
-
   <% end %>
+
+  <%= link_to payment_path do %>
+    <%= button_tag('Next', class:"cart_nextBtn hidden", id: "nextBtnReal")%>
+  <% end %>
+
   <div id="errorMsg" class="hidden">
     <div id="errorBox">
     </div>
@@ -48,4 +48,14 @@
   </div>
 </div>
 
-<!--create a button which sends ajax and hide "real" ruby button which goes to the next page if requirement okay-->
+<script type="text/javascript">
+  console.log(user);
+  if (user.length > 0){
+    document.getElementById('name').value = user[0];
+    document.getElementById('Firstname').value = user[1];
+    document.getElementById('email').value = user[2];
+    document.getElementById('street').value = user[3];
+    document.getElementById('postalCode').value = user[4];
+
+  }
+</script>
