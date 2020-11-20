@@ -13,7 +13,7 @@ user.push(postalCode);
 postalCode = parseInt(postalCode);
 realBtn = document.getElementById("nextBtnReal");
 
-localStorage.setItem('user', user);
+localStorage.setItem('user', JSON.stringify(user));
 
 
 main = document.getElementById("address_title").parentElement;

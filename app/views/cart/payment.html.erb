@@ -1,7 +1,37 @@
-<h2>Payment</h2>
+<div id="main">
+ <div class="payment__wrapper">
+    <h2>Votre commande:</h2>
+    <div id="payment__order">
+    </div>
+    <div id="payment__customer">
+    </div>
+    <div class="payment__twint">
+      Twint payment stuff
+    </div>
 
-<div>
-  Twint payment stuff
+    <button>Next</button>
+  </div>
 </div>
 
-<button>Next</button>
+
+<script type="text/javascript">
+  cart=[];
+  cart = localStorage.getItem('cart');
+  cart=JSON.parse(cart);
+  console.log(cart[1]);
+
+  user = localStorage.getItem('user');
+  user=JSON.parse(user);
+  customer= document.getElementById('payment__customer');
+
+  var customer_list = document.createElement("ul");
+
+  for (i = 0; i < user.length; i++) {
+    var z = document.createElement("li");
+    console.log(user[i])
+    z.innerHTML(user[i]);
+
+    customer_list.appendChild(z);
+  }
+
+</script>

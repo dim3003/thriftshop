@@ -49,6 +49,8 @@
 </div>
 
 <script type="text/javascript">
+  user = localStorage.getItem('user');
+  user=JSON.parse(user);
   console.log(user);
   if (user.length > 0){
     document.getElementById('name').value = user[0];
@@ -56,6 +58,5 @@
     document.getElementById('email').value = user[2];
     document.getElementById('street').value = user[3];
     document.getElementById('postalCode').value = user[4];
-
   }
 </script>
