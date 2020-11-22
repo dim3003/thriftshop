@@ -27,16 +27,36 @@
     </h4>
     <div id="payment__customer">
     </div>
+    <h4 class="payment__title">Paiement:</h4>
     <div class="payment__twint">
       ***TWINT PAYMENT***
     </div>
+    <div class="payment__next">
+      <a href="/">
+        <btn name="next" class="cart_nextBtn">Confirmer l'achat</btn>
+      </a>
+    </div>
 
-    <button>Next</button>
   </div>
 </div>
 
-
+<script src="https://smtpjs.com/v3/smtp.js"></script>
 <script type="text/javascript">
+  function sendEmail() {
+    Email.send({
+      Host: "smtp.gmail.com",
+      Username : "andre.d3003@gmail.com",
+      Password : "<email password>",
+      To : '<recipient’s email address>',
+      From : "<sender’s email address>",
+      Subject : "<email subject>",
+      Body : "<email body>",
+    })
+    .then(function(message){
+      alert("mail sent successfully")
+    });
+  }
+
   cart=[];
   cart = localStorage.getItem('cart');
   cart=JSON.parse(cart);
