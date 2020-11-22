@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   get '/cart/payment', to: 'cart#payment', as: 'payment'
 
+  get '/cart/confirmation', to: 'cart#confirmation', as: 'confirmation'
+
 
 
   resources :items

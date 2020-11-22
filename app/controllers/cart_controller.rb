@@ -14,6 +14,10 @@ class CartController < ApplicationController
     @items = Item.all
   end
 
+  def confirmation
+    UserMailer.with(user: "Jean-Paul").welcome_email.deliver_now
+  end
+
   private
 
   def address_resource_params
