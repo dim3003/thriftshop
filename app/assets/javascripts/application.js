@@ -41,6 +41,16 @@ let mailformat = /(?!.*\.{2})^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\u
 let errorBox;
 let main;
 let realBtn;
+let price;
+let info;
+let total;
+let separator;
+let totalText;
+let totalTextText;
+let totalPrice;
+let totalPricePrice;
+let itemsParent;
+let customer_list;
 /*
 window.addEventListener('load', function(){
   let cart = [];

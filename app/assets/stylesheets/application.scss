@@ -41,6 +41,13 @@ header{
   justify-content: space-between;
 }
 
+.center{
+  display: flex;
+  flex-direction: column;
+
+  margin: 0 2em 5em;
+}
+
 #main{
   height: 83vh;
 
@@ -93,6 +100,10 @@ header hr{
   width:100%;
   display: flex;
   justify-content: center;
+}
+
+.nopoint{
+  list-style-type: none;
 }
 
 .reverse{

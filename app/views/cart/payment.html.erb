@@ -1,12 +1,34 @@
-<div id="main">
+<div class="center">
  <div class="payment__wrapper">
-    <h2>Votre commande:</h2>
+    <h4 class="payment__title">Votre commande:</h4>
     <div id="payment__order">
+      <div id="all_cart" class="payment__block">
+        <% @items.each do |item|%>
+         <div id="<%=item.id%>">
+           <div>
+           -----------------------------------
+           </div>
+           <div class="payment__item">
+             <div>
+               <%= item.title %>
+             </div>
+             <div>
+               <%= item.price %> CHF
+             </div>
+           </div>
+         </div>
+        <% end %>
+      </div>
+
+
     </div>
+    <h4 class="payment__title--livraison">
+      Informations de livraison:
+    </h4>
     <div id="payment__customer">
     </div>
     <div class="payment__twint">
-      Twint payment stuff
+      ***TWINT PAYMENT***
     </div>
 
     <button>Next</button>
@@ -18,20 +40,61 @@
   cart=[];
   cart = localStorage.getItem('cart');
   cart=JSON.parse(cart);
-  console.log(cart[1]);
+
+  items = document.getElementById("all_cart").children;
+
+  price = 0;
+
+
+  for(let i=0; i< items.length; i++){
+    price = price + Number(items[i].lastElementChild.lastElementChild.innerText.replace(/\s/g,'').slice(0, -3))
+    if(cart.indexOf(items[i].id)<0){
+      items[i].className="hidden";
+      price = price - Number(items[i].lastElementChild.lastElementChild.innerText.replace(/\s/g,'').slice(0, -3))
+    } else{
+
+    }
+  }
+
+  total = document.createElement("div");
+  total.className="payment__item";
+
+  separator = document.createElement("hr");
+
+
+  totalText = document.createElement("div");
+  totalTextText = document.createTextNode("Total");
+  totalText.appendChild(totalTextText);
+
+  totalPrice = document.createElement("div");
+  totalPricePrice = document.createTextNode(price+" CHF");
+  totalPrice.appendChild(totalPricePrice);
+
+  total.appendChild(totalText);
+  total.appendChild(totalPrice);
+
+  itemsParent = document.getElementById("all_cart");
+  itemsParent.appendChild(separator);
+  itemsParent.appendChild(total);
+
+
+
+
 
   user = localStorage.getItem('user');
-  user=JSON.parse(user);
+  user = JSON.parse(user);
   customer= document.getElementById('payment__customer');
 
-  var customer_list = document.createElement("ul");
+  customer_list = document.createElement("div");
+  customer_list.className = "payment__block"
 
-  for (i = 0; i < user.length; i++) {
-    var z = document.createElement("li");
-    console.log(user[i])
-    z.innerHTML(user[i]);
+  for (i = user.length - 1 ; i >= 0; i--) {
+    var z = document.createElement("div");
+    z.className="payment__item"
+    info = document.createTextNode(user[i]);
+    z.appendChild(info);
 
     customer_list.appendChild(z);
   }
-
+  customer.appendChild(customer_list);
 </script>

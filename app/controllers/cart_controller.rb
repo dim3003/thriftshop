@@ -11,6 +11,7 @@ class CartController < ApplicationController
   end
 
   def payment
+    @items = Item.all
   end
 
   private

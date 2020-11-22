@@ -6,6 +6,26 @@
   margin: 2em auto;
 }
 
+.payment__block{
+  padding: 2em 0;
+}
+
+.payment__title{
+  font-size: 1.2em;
+  margin-bottom:0;
+}
+
+.payment__title--livraison{
+  font-size: 1em;
+  margin-bottom:0;
+}
+
 .payment__twint{
   padding: 2em;
+}
+
+.payment__item{
+  display:flex;
+  justify-content: space-between;
+  padding: 0.2em 1em;
 }
