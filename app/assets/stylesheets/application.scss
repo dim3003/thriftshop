@@ -33,12 +33,18 @@ a{text-decoration: none;
 }
 
 header{
-  height: 8vh;
-  position:relative;
+  display:none;
+}
 
-  display:flex;
-  flex-direction: column;
-  justify-content: space-between;
+@media only screen and (min-device-width: 480px){
+  header{
+    height: 8vh;
+    position:relative;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 
 .center{
@@ -114,4 +120,9 @@ header hr{
 .items--index{
 
   padding:0;
+}
+
+.center{
+  text-align:center;
+  margin:auto;
 }

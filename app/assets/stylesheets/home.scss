@@ -2,13 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.nav-header{
-  flex-grow: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 
-  margin: 0 2em;
+/*--------------
+  BASIC LAYOUT
+  --------------*/
+
+.nav-header{
+  display: none;
 }
 
 .nav-links{
@@ -20,20 +20,55 @@
 
 .main-title{
   text-align: center;
-  height: 20%;
+  margin: 0.1em auto;
 
-  margin: 1em 0 1.8em;
-
-  em {
-    font-size: 0.9em;
-  }
+  font-size:4em;
 }
 
-
+.main-title__desc{
+  display:none;
+}
 
 .home_cards{
   display: flex;
   justify-content: center;
 
-  margin-bottom: 3em;
+  flex-direction: column;
+}
+
+/*--------------
+  DESKTOP LAYOUT
+  --------------*/
+
+@media only screen and (min-device-width: 480px){
+  .nav-header{
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0 2em;
+  }
+
+  .main-title{
+    text-align: center;
+    height: 20%;
+
+    margin: 1em 0 1.8em;
+
+    em {
+      font-size: 0.9em;
+    }
+  }
+
+  .main-title__desc{}
+
+  .home_cards{
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 3em;
+  }
+
+
 }
