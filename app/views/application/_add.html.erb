@@ -1,11 +1,11 @@
 <%= form_tag(add_path, class: 'wide--center', method: :get, remote: true) do %>
 
   <%= hidden_field_tag('item', item.id)%>
-  <%= button_tag('ADD TO CART', class:  'card__add') do %>
+  <%= button_tag('AJOUTER AU PANIER', class:  'card__add') do %>
     <div class="hidden">
       <%= item.id %>
     </div>
-    <div>ADD TO CART</div>
+    <div>AJOUTER AU PANIER</div>
     <svg>
       <use href="#pluss"></use>
     </svg>
