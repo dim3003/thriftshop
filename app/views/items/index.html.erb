@@ -1,4 +1,8 @@
 <div id="main--content">
+  <div class="main-title">
+    <h2><%= link_to "THRIFT", root_path%></h2>
+    <em class="main-title__desc">Magasin d'habits de seconde-main eco-friendly.</em>
+  </div>
   <div class="items--index">
     <% @items.each do |item|%>
         <%= render(partial: 'item_card--index',
