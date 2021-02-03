@@ -1,10 +1,10 @@
 <div class="show">
+  <div class="main-title">
+    <h2><%= link_to "THRIFT", root_path%></h2>
+    <em class="main-title__desc">Magasin d'habits de seconde-main eco-friendly.</em>
+  </div>
   <div class="card--show">
-    <div class="card--show__desc">
-      <div>
-        <%= item.description%>
-      </div>
-    </div>
+
     <div class="card--show__card">
       <%= link_to(item_path(item)) do %>
         <%= render(partial: 'item_photo',
@@ -13,8 +13,17 @@
           <h4 class="card__title"><%= card_title %> // <span class="card__price"><%= price %> CHF</span></h4>
         </div>
         <% end %>
+        <div class="card--show__desc">
+          <div>
+            <%= item.description%>
+          </div>
+        </div>
         <%= render(partial: "add",
                    locals: {item: item}) %>
       </div>
+      <%= render(partial: "cart-link") %>
+  </div>
+  <div class="card--show__link">
+    <%= link_to "Retour", items_path %>
   </div>
 </div>

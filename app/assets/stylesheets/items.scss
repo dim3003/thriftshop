@@ -4,29 +4,40 @@
 
 /* ITEMS SHOW */
 .show{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
+  margin: 1em 0;
 }
 
 .card--show{
+  max-height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
 
-  width: 100%;
+  width: 95%;
   margin:auto;
 }
 
 .card--show__desc{
-  width: 600px;
   line-height: 50px;
 
   display:flex;
   flex-direction: column;
   justify-content: center;
 
-  padding: 2em 0 4em;
+  padding:  1em 0 2em;
+
+  font-size: 2.5em;
+}
+
+.card--show__link{
+  font-size: 2.5em;
+  text-align: center;
+
+  margin: 2em auto 1em;
+
+  a{
+    color:blue;
+  }
 }
 
 /* INDEX ITEMS */
