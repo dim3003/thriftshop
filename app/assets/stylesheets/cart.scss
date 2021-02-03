@@ -2,15 +2,48 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#all-items{
+  width: 95%;
+  margin: 6em auto;
+}
+
+.all_cart{
+  margin: 2em auto;
+
+  h4{
+    font-size: 3em;
+  }
+}
+
 .cart_hide{
   display: none;
 }
+
+.cart__remove{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  div{
+    padding:0.5em 0;
+  }
+
+  background-color: #b65252;
+}
+
+.remove-form{
+  display:flex;
+  width: 50%;
+
+  font-size: 2em;
+}
+
 .cart_row{
   display:flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 
-  padding: 1em 25%;
+  padding: 1em 0;
 }
 
 .cart_hr{
@@ -26,14 +59,17 @@
 
 #no-item{
   padding:1em;
-  margin: 0 0 auto;
+  margin: 1em auto 27em;
+
+  font-size: 2.5em;
 }
 
 .cart_nextBtn{
-  font-size: 1.1em;
+  font-size: 3em;
   padding: 0.5em;
   background-color: #eee;
   border: 2px solid #aaa;
+  border: solid black;
 }
 
 .cart_nextBtn--address{
@@ -44,4 +80,8 @@
   padding:2em 0;
   display:flex;
   justify-content: center;
+}
+
+.hr__next{
+  margin:2em 0;
 }

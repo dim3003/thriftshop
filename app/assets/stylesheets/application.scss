@@ -47,6 +47,22 @@ header{
   }
 }
 
+.mobile-header{
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 1em;
+  a{
+    font-size: 0.7em;
+  }
+}
+
+@media only screen and (min-device-width: 480px){
+  .mobile-header{
+    display:none;
+  }
+}
+
 .center{
   display: flex;
   flex-direction: column;

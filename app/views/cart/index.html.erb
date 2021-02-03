@@ -1,4 +1,11 @@
 <div id="main">
+  <div class="main-title">
+    <h2><%= link_to "THRIFT", root_path%></h2>
+    <em class="main-title__desc">Magasin d'habits de seconde-main eco-friendly.</em>
+  </div>
+  <div class="main-title">
+    <%= render(partial: 'mobile-header')%>
+  </div>
   <div id="no-item" class="hidden">
   </div>
   <div id="all-items">
@@ -17,7 +24,7 @@
     if(cart.length == 0){
       el = document.getElementById("no-item");
       el.className="";
-      el.innerText="No items in your cart... Click on 'AJOUTER AU PANIER' to see it here."
+      el.innerText="Aucun habit dans ton panier... (Clique sur 'AJOUTER AU PANIER' en dessous des habits pour les voir apparaître ici.)"
     } else if (cart.length == 1){
     } else {
       main = document.getElementById("main");
@@ -34,10 +41,21 @@
       }
     }
 
-    if(cart.length != 0){
+    next = document.getElementsByClassName("cart_nextBtn");
+
+    console.log(next);
+
+    if((cart.length != 0) && (next.length == 0)){
+
+      allItems = document.getElementById("all-items");
+
+      var hrElem = document.createElement("hr");
+      hrElem.setAttribute("class", "hr__next");
+
+      allItems.appendChild(hrElem);
 
       var next = document.createElement("btn");
-      next.textContent="Next";
+      next.textContent="Suivant";
       next.setAttribute("name", "next");
       next.setAttribute("class", "cart_nextBtn");
 
@@ -51,7 +69,8 @@
       nextRow.appendChild(link);
 
 
-      allItems = document.getElementById("all-items");
+
+
 
       allItems.appendChild(nextRow);
     }

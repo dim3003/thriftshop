@@ -3,6 +3,9 @@
     <h2><%= link_to "THRIFT", root_path%></h2>
     <em class="main-title__desc">Magasin d'habits de seconde-main eco-friendly.</em>
   </div>
+  <div class="main-title">
+    <%= render(partial: 'mobile-header')%>
+  </div>
   <div class="home_cards">
     <% @items.each do |item| %>
       <%= render(partial: 'item_card',
