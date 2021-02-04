@@ -34,23 +34,23 @@ function addError(el) {
 }
 
 if(name.length ==0 || name.length>30){
-  addError("There seems to be an error with your name.");
+  addError("Il semble y avoir une erreur avec votre nom.");
 }
 
 if(firstname.length == 0 || firstname.length > 30){
-  addError("There seems to be an error with your first name.")
+  addError("Il semble y avoir une erreur avec votre prénom.")
 }
 
 if(mailformat.test(email) == false){
-  addError("Your email is not written correctly.");
+  addError("Votre addresse e-mail semble ne pas avoir le bon format.");
 }
 
 if(street.length == 0 || street.length > 30){
-  addError("There seems to be an error with the street your added.")
+  addError("Il semble y avoir un problème avec le nom de rue.")
 }
 
 if(postalCode == NaN || postalCode < 1000 || postalCode > 9999 || postalCode == undefined){
-  addError("We only deliver to Swiss postal codes sorry.")
+  addError("Nous livrons uniquement en Suisse pour l'instant. Désolé.")
 }
 
 if(error.firstElementChild.firstElementChild != null){

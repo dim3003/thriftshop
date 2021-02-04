@@ -1,15 +1,26 @@
 <div id="main">
-  <h2 id="address_title" class="form--title">Delivery address</h2>
+  <div class="main-title">
+    <h2><%= link_to "THRIFT", root_path%></h2>
+    <em class="main-title__desc">Magasin d'habits de seconde-main eco-friendly.</em>
+  </div>
+  <div class="main-title">
+    <%= render(partial: 'mobile-header')%>
+  </div>
+
+  <h2 id="address_title" class="form--title">Informations de livraison</h2>
+  <div class="address_warning">
+    <em>Livraisons uniquement en Suisse.</em>
+  </div>
 
   <%= form_tag(address_path, class: 'form_new_model') do %>
 
     <div class="input">
-      <label for="name" class='input-group__label'>Last name</label>
+      <label for="name" class='input-group__label'>Nom</label>
       <%= text_field_tag(:name, nil, class: 'input__text')%>
     </div>
 
     <div class="input">
-      <label for="Firstname" class='input-group__label'>First name</label>
+      <label for="Firstname" class='input-group__label'>Prénom</label>
       <%= text_field_tag(:Firstname, nil, class: 'input__text')%>
     </div>
 
@@ -19,12 +30,12 @@
     </div>
 
     <div class="input">
-      <label for="street" class='input-group__label'>Street</label>
+      <label for="street" class='input-group__label'>Rue & numéro</label>
       <%= text_field_tag(:street, nil, class: 'input__text')%>
     </div>
 
     <div class="input">
-      <label for="postalCode" class='input-group__label'>Postal code</label>
+      <label for="postalCode" class='input-group__label'>Code postal</label>
       <%= text_field_tag(:postalCode, nil, class: 'input__text')%>
     </div>
   <% end %>
@@ -41,13 +52,12 @@
   <div class="input__submit input__submit--nomargin">
     <%= form_tag(addressAJAX_path, method: :get, remote: true) do %>
       <%= button_tag('address', class: "cart_nextBtn cart_nextBtn--address") do %>
-        <div>Next</div>
+        <div>Suivant</div>
       <% end %>
 
     <% end %>
   </div>
 </div>
-
 <script type="text/javascript">
   user = localStorage.getItem('user');
   user=JSON.parse(user);
