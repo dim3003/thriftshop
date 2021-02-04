@@ -51,6 +51,7 @@ let totalPrice;
 let totalPricePrice;
 let itemsParent;
 let customer_list;
+let city;
 /*
 window.addEventListener('load', function(){
   let cart = [];

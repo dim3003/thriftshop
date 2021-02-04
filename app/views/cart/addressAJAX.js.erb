@@ -10,6 +10,8 @@ street = document.getElementById('street').value;
 user.push(street);
 postalCode = document.getElementById('postalCode').value;
 user.push(postalCode);
+city = document.getElementById('city').value;
+user.push(city);
 postalCode = parseInt(postalCode);
 realBtn = document.getElementById("nextBtnReal");
 
@@ -51,6 +53,10 @@ if(street.length == 0 || street.length > 30){
 
 if(postalCode == NaN || postalCode < 1000 || postalCode > 9999 || postalCode == undefined){
   addError("Nous livrons uniquement en Suisse pour l'instant. Désolé.")
+}
+
+if(city.length == 0 || city.length > 30){
+  addError("Il semble y avoir un problème avec le nom de ville.")
 }
 
 if(error.firstElementChild.firstElementChild != null){

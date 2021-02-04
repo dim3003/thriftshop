@@ -40,7 +40,7 @@
     </div>
     <div class="payment__next">
       <a href="/cart/confirmation">
-        <btn name="next" class="cart_nextBtn">Confirmer l'achat</btn>
+        <btn name="next" class="cart_nextBtn confirmation">Confirmer l'achat</btn>
       </a>
     </div>
 
@@ -115,9 +115,9 @@
   customer_list = document.createElement("div");
   customer_list.className = "payment__block"
 
-  for (i = user.length - 1 ; i >= 0; i--) {
+  for (i = 0 ; i <= user.length - 1; i++) {
     var z = document.createElement("div");
-    z.className="payment__item"
+    z.className="payment__item customer"
     info = document.createTextNode(user[i]);
     z.appendChild(info);
 

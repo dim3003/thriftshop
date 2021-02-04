@@ -38,6 +38,11 @@
       <label for="postalCode" class='input-group__label'>Code postal</label>
       <%= text_field_tag(:postalCode, nil, class: 'input__text')%>
     </div>
+
+    <div class="input">
+      <label for="city" class='input-group__label'>Ville / village</label>
+      <%= text_field_tag(:city, nil, class: 'input__text')%>
+    </div>
   <% end %>
 
   <%= link_to payment_path do %>
@@ -68,5 +73,6 @@
     document.getElementById('email').value = user[2];
     document.getElementById('street').value = user[3];
     document.getElementById('postalCode').value = user[4];
+    document.getElementById('city').value = user[5];
   }
 </script>
