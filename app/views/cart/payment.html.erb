@@ -45,9 +45,16 @@
       ***TWINT PAYMENT***
     </div>
     <div class="payment__next">
-      <a href="/cart/confirmation">
-        <btn name="next" class="cart_nextBtn confirmation">Confirmer l'achat</btn>
-      </a>
+      <%= form_tag('/cart/confirmation', method: :get, class: 'form--inpage') do %>
+        <%= hidden_field_tag(:name, nil) %>
+        <%= hidden_field_tag(:firstname, nil) %>
+        <%= hidden_field_tag(:email, nil) %>
+        <%= hidden_field_tag(:street, nil) %>
+        <%= hidden_field_tag(:postalcode, nil) %>
+        <%= hidden_field_tag(:city, nil) %>
+        <%= hidden_field_tag(:cart, nil) %>
+        <%= button_tag('Confirmer', class: "cart_nextBtn confirmation")%>
+       <% end %>
     </div>
   </div>
 </div>
@@ -78,7 +85,7 @@
   cartStill = document.getElementById("dbChecker");
 
   //check for each element in cart if they are in dbChecker
-  let dbId=[];
+  dbId=[];
 
   for(let i=1; i< cartStill.childNodes.length;i=i+2){
     dbId.push(cartStill.childNodes[i].innerText.replace(/\s/g,''));
@@ -147,4 +154,18 @@
     customer_list.appendChild(z);
   }
   customer.appendChild(customer_list);
+
+
+  //Set the user for order
+  user=localStorage.getItem('user');
+  user=JSON.parse(user);
+  if (user.length > 0){
+    document.getElementById('name').value = user[0];
+    document.getElementById('firstname').value = user[1];
+    document.getElementById('email').value = user[2];
+    document.getElementById('street').value = user[3];
+    document.getElementById('postalcode').value = user[4];
+    document.getElementById('city').value = user[5];
+    document.getElementById('cart').value = cart;
+  }
 </script>

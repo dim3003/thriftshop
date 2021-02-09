@@ -15,8 +15,8 @@ class CartController < ApplicationController
   end
 
   def confirmation
-
     UserMailer.welcome_email.deliver_now
+    
   end
 
   private
