@@ -5,6 +5,13 @@
 <div class="main-title">
   <%= render(partial: 'mobile-header')%>
 </div>
+<div id="dbChecker">
+  <% @items.each do |item|%>
+    <div class="hidden">
+      <%= item.id %>
+    </div>
+  <% end %>
+</div>
 <div class="center">
  <div class="payment__wrapper">
     <h4 class="payment__title">Votre commande:</h4>
@@ -27,7 +34,6 @@
         <% end %>
       </div>
 
-
     </div>
     <h4 class="payment__title--livraison">
       Informations de livraison:
@@ -43,12 +49,13 @@
         <btn name="next" class="cart_nextBtn confirmation">Confirmer l'achat</btn>
       </a>
     </div>
-
   </div>
 </div>
 
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script type="text/javascript">
+  setInterval("location.reload(true);", 300000);
+
   function sendEmail() {
     Email.send({
       Host: "smtp.gmail.com",
@@ -68,19 +75,37 @@
   cart = localStorage.getItem('cart');
   cart=JSON.parse(cart);
 
+  cartStill = document.getElementById("dbChecker");
+
+  //check for each element in cart if they are in dbChecker
+  let dbId=[];
+
+  for(let i=1; i< cartStill.childNodes.length;i=i+2){
+    dbId.push(cartStill.childNodes[i].innerText.replace(/\s/g,''));
+  }
+
+
+  for(let i=0; i< cart.length;i++){
+    if(dbId.indexOf(cart[i]) < 0){
+      cart.splice(i, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      cart = localStorage.getItem('cart');
+      cart=JSON.parse(cart);
+      alert("Un autre utilisateur a commandé un des articles dans votre panier il y a quelques secondes... Nous l'avons donc retiré. Merci de votre compréhension.");
+
+    }
+  }
+
   items = document.getElementById("all_cart").children;
 
   price = 0;
-
 
   for(let i=0; i< items.length; i++){
     price = price + Number(items[i].lastElementChild.lastElementChild.innerText.replace(/\s/g,'').slice(0, -3))
     if(cart.indexOf(items[i].id)<0){
       items[i].className="hidden";
       price = price - Number(items[i].lastElementChild.lastElementChild.innerText.replace(/\s/g,'').slice(0, -3))
-    } else{
-
-    }
+    } else{}
   }
 
   total = document.createElement("div");
@@ -103,8 +128,6 @@
   itemsParent = document.getElementById("all_cart");
   itemsParent.appendChild(separator);
   itemsParent.appendChild(total);
-
-
 
 
 

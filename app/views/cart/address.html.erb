@@ -3,6 +3,7 @@
     <h2><%= link_to "THRIFT", root_path%></h2>
     <em class="main-title__desc">Magasin d'habits de seconde-main eco-friendly.</em>
   </div>
+
   <div class="main-title">
     <%= render(partial: 'mobile-header')%>
   </div>
@@ -66,7 +67,6 @@
 <script type="text/javascript">
   user = localStorage.getItem('user');
   user=JSON.parse(user);
-  console.log(user);
   if (user.length > 0){
     document.getElementById('name').value = user[0];
     document.getElementById('Firstname').value = user[1];
