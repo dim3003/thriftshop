@@ -27,6 +27,7 @@ class CartController < ApplicationController
     if @order.save
       UserMailer.with(order: @order, items: @items).welcome_email.deliver_now
     end
+    @items.destroy(JSON.parse(params[:cart]))
   end
 
   private
