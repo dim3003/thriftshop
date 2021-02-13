@@ -5,6 +5,6 @@ class UserMailer < ApplicationMailer
     @order = params[:order]
     @items = params[:items]
     attachments.inline['logo.jpeg'] = File.read('app/assets/images/logo.jpeg')
-    mail(to: 'andre.d3003@gmail.com', subject: 'Confirmation de commande')
+    mail(to: ['thriftshopch@gmail.com',@order.email], subject: 'Confirmation de commande')
   end
 end
