@@ -52,7 +52,6 @@
     margin: 0.7em 0;
     font-size: 3em;
   }
-
 }
 
 
@@ -95,15 +94,16 @@
 
 @media only screen and (min-device-width: 480px){
   .card{
-    height: 100%;
     width: 25%;
+    height:75%;
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: stretch;
+    justify-content: flex-start;
+    align-items: center;
 
     padding: 0 0.2em;
+    margin:0;
 
     @media screen and (min-width: 1500px) {
       width: 15%;
@@ -113,30 +113,64 @@
 
   .card__img{
     max-width: 100%;
-    max-height: 100%;
+    max-height: 75%;
 
     @media screen and (min-width: 600px) {
       width: 250px;
       height: 375px;
 
       &.img--home{
-        width: 230px;
-        height: 360px;
+        width: 250px;
+        height: 375px;
       }
     }
     @media screen and (min-width: 1500px) {
       width: 280px;
       height: 420px;
     }
+
   }
 
   .card__img--center{
     display:flex;
     justify-content: center;
 
+    max-width: 100%;
+    max-height: 75%;
   }
 
   .card__add{
-    max-width: 220px;
+    max-width: 230px;
+    height:60%;
+    padding:0;
+    font-size: 1em;
+    margin:0 0 1em;
+
+    & div{
+      padding-left: 0.1em;
+      margin-left:0.5em;
+    }
+
+    & svg{
+      height:25px;
+    }
+  }
+
+  .card__intro{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+
+    h4{
+      margin: 0.7em 0;
+      font-size: 1em;
+    }
+  }
+
+  .card__add--cart{
+    width:220px;
+    padding: 0.2em 0;
   }
 }

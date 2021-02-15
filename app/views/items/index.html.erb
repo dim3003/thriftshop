@@ -1,6 +1,6 @@
 <div id="main--content">
   <div class="main-title">
-    <h2><%= link_to "THRIFT", root_path%></h2>
+    <h2 class="main-title__mobile"><%= link_to "THRIFT", root_path%></h2>
     <em class="main-title__desc">Magasin d'habits de seconde-main eco-friendly.</em>
   </div>
   <div class="main-title">
@@ -12,7 +12,7 @@
                    locals: {card_title: item.title, price: item.price, photo_url: item.photo_url, item: item})%>
     <% end %>
   </div>
-  <div class="home_cards__link">
+  <div class="index_cards__link">
     <%= link_to "Aller au panier...", cart_index_path%>
   </div>
 </div>

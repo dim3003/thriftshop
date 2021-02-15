@@ -25,6 +25,10 @@
   font-size:4em;
 }
 
+.main-title__desktop{
+  display:none;
+}
+
 .main-title__desc{
   display:none;
 }
@@ -61,25 +65,29 @@
     margin: 0 2em;
   }
 
+
   .main-title{
-    text-align: center;
-    height: 20%;
-
-    margin: 1em 0 1.8em;
-
-    em {
-      font-size: 0.9em;
-    }
+    display:none;
   }
-
-  .main-title__desc{}
 
   .home_cards{
     display: flex;
     justify-content: center;
+    align-items: center;
 
-    margin-bottom: 3em;
+    flex-direction:row;
+
+    height:90%;
   }
 
+  .home_cards__link{
+    font-size: 1.1em;
+    margin:0 auto 2em;
+  }
+}
 
+@media screen and (max-height: 800px) {
+  .home_cards__link{
+    display:none;
+  }
 }
