@@ -26,6 +26,8 @@
       el.className="";
       el.innerText="Aucun habit dans ton panier... (Clique sur 'AJOUTER AU PANIER' en dessous des habits pour les voir apparaître ici.)"
     } else if (cart.length == 1){
+      allItems = document.getElementById("all-items");
+      allItems.className="all-items--one";
     } else {
       main = document.getElementById("main");
       main.id ="";
