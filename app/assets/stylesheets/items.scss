@@ -3,8 +3,28 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* ITEMS SHOW */
+@media only screen and (min-device-width: 480px){
+  .main--show{
+    display:flex;
+    flex-direction: row;
+    height:84vh;
+  }
+}
+
 .show{
   margin: 1em 0;
+}
+
+@media only screen and (min-device-width: 480px){
+  .show{
+    width:50%;
+    height:100%;
+    margin:0;
+    padding-left:2em;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .card--show{
@@ -15,6 +35,18 @@
 
   width: 95%;
   margin: 6em auto;
+
+  a {
+    margin:0 auto;
+  }
+}
+
+@media only screen and (min-device-width: 480px){
+  .card--show{
+    margin:0;
+    width:100%;
+  }
+
 }
 
 .card--show__desc{
@@ -27,6 +59,28 @@
   padding:  1em 0 2em;
 
   font-size: 2.5em;
+
+  a{
+    color: blue;
+  }
+}
+
+.card--show__return{
+  display:none;
+  margin:1em 0;
+}
+
+@media only screen and (min-device-width: 480px){
+  .card--show__desc{
+    font-size: 1em;
+    width:50%;
+    padding-right: 2em;
+  }
+
+  .card--show__return{
+    display:block;
+  }
+
 }
 
 .card--show__link{
@@ -37,6 +91,12 @@
 
   a{
     color:blue;
+  }
+}
+
+@media only screen and (min-device-width: 480px){
+  .card--show__link{
+    display:none;
   }
 }
 

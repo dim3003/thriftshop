@@ -16,11 +16,6 @@
           <h4 class="card__title"><%= card_title %> // <span class="card__price"><%= price %> CHF</span></h4>
         </div>
         <% end %>
-        <div class="card--show__desc">
-          <div>
-            <%= item.description%>
-          </div>
-        </div>
         <%= render(partial: "add",
                    locals: {item: item}) %>
       </div>
