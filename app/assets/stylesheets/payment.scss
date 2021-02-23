@@ -23,7 +23,7 @@
 .payment__twint{
   padding: 2em;
 
-  margin: 40em 0;
+  margin: 4em 0;
 }
 
 
@@ -53,4 +53,24 @@
 
   text-align: center;
   margin:2em auto 29em;
+}
+
+@media only screen and (min-device-width: 480px){
+
+  .payment__title{
+    font-size:1.5em;
+  }
+
+  .payment__item{
+    font-size:1em;
+  }
+
+  .payment__title--livraison{
+    font-size:1.5em;
+  }
+
+  .payment__confirmation{
+    font-size:1em;
+  }
+
 }
