@@ -1,5 +1,6 @@
 #address_title{
-  font-size: 3.5em;
+  font-size: 3em;
+
 }
 
 .address_warning{
@@ -7,4 +8,11 @@
   text-align: center;
 
   margin:1em 0;
+}
+
+@media only screen and (min-device-width: 480px){
+  #address_title{
+    font-size:2em;
+  }
+
 }
