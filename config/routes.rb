@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   get '/cart/confirmation', to: 'cart#confirmation', as: 'confirmation'
 
+  get '/home/contact', to: 'home#contact', as: 'contact'
+
   resources :items
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

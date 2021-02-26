@@ -51,6 +51,22 @@
   }
 }
 
+.contact{
+  margin:2em;
+}
+.contact_info{
+  height:73vh;
+  padding:0 2em;
+
+  & div{
+    padding:0.5em 0;
+  }
+
+  & a {
+    color: blue;
+  }
+}
+
 /*--------------
   DESKTOP LAYOUT
   --------------*/
