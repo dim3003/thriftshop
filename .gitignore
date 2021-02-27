@@ -26,3 +26,11 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore the assets
+
+public/assets/*
+
+public/uploads/*
+
+run-production.sh

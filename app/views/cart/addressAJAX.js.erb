@@ -21,14 +21,14 @@ localStorage.setItem('user', JSON.stringify(user));
 main = document.getElementById("address_title").parentElement;
 main.setAttribute("id", "main");
 
-error = document.getElementById("errorMsg");
-error.firstElementChild.remove()
+prout = document.getElementById("errorMsg");
+prout.firstElementChild.remove()
 errorBox = document.createElement("div");
 errorBox.setAttribute("id", "errorBox");
-error.appendChild(errorBox);
+prout.appendChild(errorBox);
 
 function addError(el) {
-  error.className = "";
+  prout.className = "";
   let p = document.createElement("p");
   let textNode = document.createTextNode(el);
   p.appendChild(textNode);
@@ -59,10 +59,10 @@ if(city.length == 0 || city.length > 30){
   addError("Il semble y avoir un problème avec le nom de ville.")
 }
 
-if(error.firstElementChild.firstElementChild != null){
+if(prout.firstElementChild.firstElementChild != null){
   main = document.getElementById("main");
   main.id ="";
 } else {
-  error.className="hidden";
+  prout.className="hidden";
   realBtn.click();
 }
