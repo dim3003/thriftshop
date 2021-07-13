@@ -3,22 +3,45 @@
  <%=image_tag attachments.inline['logo.jpeg'].url %>
 </div>
 
-<h2 class="email-title">Merci pour ta commande !</h2>
-<div class="email-title__number">Commande numéro <%= @order.id %>: confirmation de paiement</div>
+<h2 class="email-title">Merci pour ta commande Thriftshop!</h2>
+
 
 
 <div class="email-text">
   Nous avons bien reçu ta commande, elle te sera déliverée à
-  l'adresse indiquée dans les plus brefs délais.
+  l'adresse indiquée dans les 5 jours.
 
   Merci pour ton soutien, à bientôt !
 </div>
 
+<div class="email_payment">
+  Dès réception du montant sur le compte bancaire suivant, la livraison sera effectuée dans les 5 jours.<br />
+  Montant total:
+  <% for i in JSON.parse(@order.purchase) %>
+     <% i = Integer(i) %>
+     <%= @items.find(i).price %> CHF
+  <% end %>
+  <div class="email_payment--bank">
+    <br />
+    MAS BEAUCLERCQ MAEVANE<br/>
+    IBAN: CH5500767000E52204350<br/>
+    BIC/SWIFT: BCVLCH2LXXX<br/>
+    Banque: Banque Cantonale Vaudoise<br />
+    <br />
+</div>
 
-<h2 class="email-title__2">Résumé de la commande:</h2>
+<em>Note: si le paiement n'est pas effectué dans les 5 jours, nous nous réservons le droit de remettre en vente les articles achetés.</em>
 
 <div class="email-order">
-  Information de livraison:
+  Résumé de la commande:
+  <div class="email-title__number">Numéro de commande: <%= @order.id %></div>
+  <div class="email-order__cart">
+    <% $i = 0 %>
+    <% for i in JSON.parse(@order.purchase) %>
+       <% i = Integer(i) %>
+       <div class="email-order__item"><%= @items.find(i).title %> // <%= @items.find(i).price %> CHF // Numéro de référence: <%= @items.find(i).id %></div>
+    <% end %>
+  </div>
   <div class="email-order__user">
     <div class="email-order__info"><%= @order.name %></div>
     <div class="email-order__info"><%= @order.firstname %></div>
@@ -28,14 +51,7 @@
     <div class="email-order__info"><%= @order.city %></div>
   </div>
 
-  Information de commande:
-  <div class="email-order__cart">
-    <% $i = 0 %>
-    <% for i in JSON.parse(@order.purchase) %>
-       <% i = Integer(i) %>
-       <div class="email-order__item"><%= @items.find(i).title %> // <%= @items.find(i).price %> CHF // Numéro de référence: <%= @items.find(i).id %></div>
-    <% end %>
-  </div>
+
 </div>
 
 <div class="email-bottom">
