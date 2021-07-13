@@ -35,15 +35,25 @@
       </div>
 
     </div>
+    <div class="payment__info">
+      Le paiement se fait par virement bancaire au compte suivant: <br />
+      <div class="payment_info--bank">
+        <br />
+        MAS BEAUCLERCQ MAEVANE<br/>
+        IBAN: CH5500767000E52204350<br/>
+        BIC/SWIFT: BCVLCH2LXXX<br/>
+        Banque: Banque Cantonale Vaudoise<br />
+        <br />
+      </div>
+      <em> Rappel: les livraisons se font uniquement aux adresses physiques suisses.</em>
+    </div>
+
     <h4 class="payment__title--livraison">
       Informations de livraison/facturation:
     </h4>
     <div id="payment__customer">
     </div>
-    <h4 class="payment__title">Paiement:</h4>
-    <div class="payment__twint">
-      ***TWINT PAYMENT***
-    </div>
+
     <div class="payment__next">
       <%= form_tag('/cart/confirmation', method: :get, class: 'form--inpage') do %>
         <%= hidden_field_tag(:name, nil) %>
