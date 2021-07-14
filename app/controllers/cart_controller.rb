@@ -23,6 +23,7 @@ class CartController < ApplicationController
     @order.postalCode = params[:postalcode]
     @order.city = params[:city]
     @order.purchase = params[:cart]
+    @order.total = params[:total]
     @items = Item.all
     if @order.save
       UserMailer.with(order: @order, items: @items).welcome_email.deliver_now
@@ -37,7 +38,7 @@ class CartController < ApplicationController
   end
 
   def order_resource_params
-    params.require(:address).permit(:name, :firstname, :email, :street, :postalCode,:city, :purchase)
+    params.require(:address).permit(:name, :firstname, :email, :street, :postalCode,:city, :purchase, :total)
   end
 
 end

@@ -15,14 +15,11 @@
 </div>
 
 <div class="email_payment">
-  Dès réception du montant sur le compte bancaire suivant, la livraison sera effectuée dans les 5 jours.<br />
-  Montant total:
-  <% for i in JSON.parse(@order.purchase) %>
-     <% i = Integer(i) %>
-     <%= @items.find(i).price %> CHF
-  <% end %>
+  Dès réception du montant sur le compte bancaire suivant, la livraison sera effectuée.<br />
+
   <div class="email_payment--bank">
     <br />
+    Montant total: <%= @order.total %> CHF <br/>
     MAS BEAUCLERCQ MAEVANE<br/>
     IBAN: CH5500767000E52204350<br/>
     BIC/SWIFT: BCVLCH2LXXX<br/>

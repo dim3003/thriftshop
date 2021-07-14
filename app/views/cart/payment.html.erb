@@ -63,6 +63,7 @@
         <%= hidden_field_tag(:postalcode, nil) %>
         <%= hidden_field_tag(:city, nil) %>
         <%= hidden_field_tag(:cart, nil) %>
+        <%= hidden_field_tag(:total, nil) %>
         <%= button_tag('Confirmer', class: "cart_nextBtn confirmation")%>
        <% end %>
     </div>
@@ -177,5 +178,6 @@
     document.getElementById('postalcode').value = user[4];
     document.getElementById('city').value = user[5];
     document.getElementById('cart').value = JSON.stringify(cart);
+    document.getElementById('total').value = price;
   }
 </script>
