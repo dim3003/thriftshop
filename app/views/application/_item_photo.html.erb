@@ -1,6 +1,6 @@
 <div class="card__img--center">
   <% if(photo_url.nil? || photo_url.empty?) %>
-    <%= image_tag('unavailable.jpg', alt: "Unavailable picture", class:"card__img") %>
+    <%= image_tag('unavailable.jpg', alt: "Unavailable picture", class:"card__img", style:"width:100%") %>
   <% else %>
     <%= image_tag(photo_url, class:"card__img")%>
   <% end %>
