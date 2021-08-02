@@ -29,6 +29,9 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:item])
   end
 
+  def destroy
+  end
+
 
   private
 

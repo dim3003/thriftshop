@@ -18,14 +18,23 @@
           <%= render(partial: 'item_photo',
                      locals: {photo_url: "unavailable.jpg"}) %>
         </div>
-        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+        <div class="slidingImg">
+          <%= render(partial: 'item_photo',
+                     locals: {photo_url: "hoodie1.jpg"}) %>
+        </div>
+    <% end %>
 
+        <button onclick="previousItem()">
+          &#10094;
+        </button>
+        <%= button_to item_path(item), id: "buttonNextImg", method: :delete, remote: true do %>
+          &#10095;
+        <% end %>
 
         <div class="card__intro">
           <h4 class="card__title"><%= card_title %> // <span class="card__price"><%= price %> CHF</span></h4>
         </div>
-        <% end %>
+
         <%= render(partial: "add",
                    locals: {item: item}) %>
       </div>
@@ -37,26 +46,26 @@
 </div>
 
 <%= javascript_tag do %>
-
-  //carousel display
-  console.log("STARTING THE SCRIPT");
+  //console.log("INITIAL JS PART")
   var slideIndex = 1;
-  showDivs(slideIndex);
 
-  function plusDivs(n) {
-    showDivs(slideIndex += n);
+  //console.log(slideIndex);
+
+  var i;
+  var x = document.getElementsByClassName("slidingImg");
+
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
   }
+  x[slideIndex-1].style.display = "block";
 
-  function showDivs(n) {
-    console.log(slideIndex);
-    console.log("In showDivs");
-    var i;
-    var x = document.getElementsByClassName("slidingImg");
-    if (n > x.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = x.length}
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";
-    }
-    x[slideIndex-1].style.display = "block";
+  //console.log("END OF THE INITIAL JS")
+
+  //onclick does slideindex -2 and then clicks on the next button
+
+  function previousItem() {
+    //console.log("IN PREVIOUS ITEM")
+    slideIndex = slideIndex -2;
+    document.getElementById("buttonNextImg").click();
   }
 <% end %>
