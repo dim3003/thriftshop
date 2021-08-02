@@ -36,9 +36,6 @@
   width: 95%;
   margin: 6em auto;
 
-  a {
-    margin:0 auto;
-  }
 }
 
 @media only screen and (min-device-width: 480px){
@@ -48,6 +45,7 @@
   }
 
 }
+
 
 .card--show__desc{
   line-height: 50px;
@@ -98,6 +96,31 @@
   .card--show__link{
     display:none;
   }
+}
+
+/* CAROUSEL BUTTONS */
+
+.card--carousel{
+  display:flex;
+  justify-content: space-between;
+  padding: 0 0.5em;
+  margin: 0 0 0.2em 0;
+
+  font-size: 6em;
+
+  h4{
+    font-size: 0.5em;
+    margin:0;
+    padding: 0.7em 0 0 0;
+  }
+}
+
+.card--carousel__right{
+  display:inline-block;
+}
+
+.card--carousel__left{
+  display:inline-block;
 }
 
 /* INDEX ITEMS */

@@ -9,7 +9,7 @@
   <div class="card--show">
 
     <div class="card--show__card">
-      <%= link_to(item_path(item)) do %>
+      <%= link_to item_path(item), class: "card--carousel__right", method: :delete, remote: true do %>
         <div class="slidingImg">
           <%= render(partial: 'item_photo',
                      locals: {photo_url: photo_url}) %>
@@ -23,17 +23,19 @@
                      locals: {photo_url: "hoodie1.jpg"}) %>
         </div>
     <% end %>
+        <div class="card--carousel">
+          <a onclick="previousItem()" class="card--carousel__left">
+            &#10094;
+          </a>
 
-        <button onclick="previousItem()">
-          &#10094;
-        </button>
-        <%= button_to item_path(item), id: "buttonNextImg", method: :delete, remote: true do %>
-          &#10095;
-        <% end %>
-
-        <div class="card__intro">
           <h4 class="card__title"><%= card_title %> // <span class="card__price"><%= price %> CHF</span></h4>
+
+          <%= link_to item_path(item), id: "buttonNextImg", class: "card--carousel__right", method: :delete, remote: true do %>
+            &#10095;
+          <% end %>
         </div>
+
+
 
         <%= render(partial: "add",
                    locals: {item: item}) %>
