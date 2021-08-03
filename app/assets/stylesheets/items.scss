@@ -34,7 +34,7 @@
   justify-content: space-around;
 
   width: 95%;
-  margin: 6em auto;
+  margin: 6em auto 3em;
 
 }
 
@@ -54,7 +54,7 @@
   flex-direction: column;
   justify-content: center;
 
-  padding:  1em 0 2em;
+  padding:  0 1em;
 
   font-size: 2.5em;
 
@@ -82,7 +82,7 @@
 }
 
 .card--show__link{
-  font-size: 2.5em;
+  font-size: 1em;
   text-align: center;
 
   margin: 2em auto 1em;

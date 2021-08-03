@@ -16,11 +16,11 @@
         </div>
         <div class="slidingImg">
           <%= render(partial: 'item_photo',
-                     locals: {photo_url: "unavailable.jpg"}) %>
+                     locals: {photo_url: photo_url2}) %>
         </div>
         <div class="slidingImg">
           <%= render(partial: 'item_photo',
-                     locals: {photo_url: "hoodie1.jpg"}) %>
+                     locals: {photo_url: photo_url3}) %>
         </div>
     <% end %>
         <div class="card--carousel">
@@ -41,6 +41,13 @@
                    locals: {item: item}) %>
       </div>
       <%= render(partial: "cart-link") %>
+  </div>
+  <div class="card--show__desc">
+    <div>
+      Taille: <%= size %>
+    <div>
+    </br>
+    <%= @item.description%>
   </div>
   <div class="card--show__link">
     <%= link_to "Retour", items_path %>
