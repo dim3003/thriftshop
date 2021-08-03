@@ -5,8 +5,6 @@
 /* ITEMS SHOW */
 @media only screen and (min-device-width: 480px){
   .main--show{
-    display:flex;
-    flex-direction: row;
     height:84vh;
   }
 }
@@ -17,12 +15,12 @@
 
 @media only screen and (min-device-width: 480px){
   .show{
-    width:50%;
+    width:100%;
     height:100%;
     margin:0;
     padding-left:2em;
     display:flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
   }
 }
@@ -42,6 +40,12 @@
   .card--show{
     margin:0;
     width:100%;
+  }
+
+  .card--show__card{
+    .wide--center{
+      display:inline-block;
+    }
   }
 
 }
@@ -121,6 +125,24 @@
 
 .card--carousel__left{
   display:inline-block;
+}
+
+@media only screen and (min-device-width: 480px){
+  .card--carousel{
+    font-size: 2em;
+    justify-content: left;
+
+    padding:0;
+
+    .card--carousel__left{
+      margin-right: 1em;
+    }
+
+    .card__title{
+      margin-right: 1em;
+    }
+  }
+
 }
 
 /* INDEX ITEMS */

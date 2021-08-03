@@ -10,6 +10,10 @@
   padding: 2em 0;
 }
 
+.payment__title{
+  font-size:3em;
+}
+
 .payment__title--livraison{
   font-size: 3em;
   margin-bottom:0;
@@ -19,6 +23,8 @@
   padding: 1em;
   margin: 2em 0 0 0;
   padding: 1em;
+
+  font-size: 2em;
 }
 
 .payment_info--bank{
@@ -36,7 +42,7 @@
   justify-content: space-between;
   padding: 0.8em 1em;
 
-  font-size: 2.5em;
+  font-size: 2em;
 
   &.customer{
     padding: 0.3em 1em;
@@ -77,4 +83,11 @@
     font-size:1em;
   }
 
+  .payment__info{
+    padding: 1em;
+    margin: 2em 0 0 0;
+    padding: 1em;
+
+    font-size: 1em;
+  }
 }

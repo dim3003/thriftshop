@@ -6,6 +6,9 @@
   <div class="main-title">
     <%= render(partial: 'mobile-header')%>
   </div>
+  <h4 class="home--mission">Bienvenue sur Thriftshop!
+    Notre mission: donner une nouvelle vie à des vêtements en Suisse.
+  </h4>
   <div class="home_cards">
     <% @items.each do |item| %>
       <%= render(partial: 'item_card',
