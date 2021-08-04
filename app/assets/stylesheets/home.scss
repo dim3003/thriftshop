@@ -73,6 +73,10 @@
   padding: 0 1em;
 }
 
+.home_cards--hr{
+  display:none;
+}
+
 /*--------------
   DESKTOP LAYOUT
   --------------*/
@@ -93,7 +97,8 @@
   }
 
   .home--mission{
-    display:none;
+    font-size:1.2em;
+    margin: 2em 0;
   }
 
   .home_cards{
@@ -104,6 +109,13 @@
     flex-direction:row;
 
     height:90%;
+    margin: 2em 0;
+  }
+
+  .home_cards--hr{
+    display:block;
+    opacity:0.03;
+    box-shadow: 0 -2px 5px 3px black;
   }
 
   .home_cards__link{
