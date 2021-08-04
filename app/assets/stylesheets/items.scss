@@ -39,13 +39,14 @@
 @media only screen and (min-device-width: 480px){
   .card--show{
     margin:0;
-    width:100%;
+    width:50%;
+    justify-content: center;
   }
 
   .card--show__card{
-    .wide--center{
-      display:inline-block;
-    }
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
 }
@@ -100,6 +101,11 @@
   .card--show__link{
     display:none;
   }
+
+  .show--panier{
+    display: flex;
+    justify-content: center;
+  }
 }
 
 /* CAROUSEL BUTTONS */
@@ -119,6 +125,7 @@
   }
 }
 
+
 .card--carousel__right{
   display:inline-block;
 }
@@ -130,12 +137,15 @@
 @media only screen and (min-device-width: 480px){
   .card--carousel{
     font-size: 2em;
-    justify-content: left;
-
+    justify-content: center;
     padding:0;
 
     .card--carousel__left{
-      margin-right: 1em;
+      margin: 0 1em;
+    }
+
+    .card--carousel__right{
+      margin: 0 1em;
     }
 
     .card__title{
