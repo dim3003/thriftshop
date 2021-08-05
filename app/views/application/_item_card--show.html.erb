@@ -14,14 +14,18 @@
           <%= render(partial: 'item_photo',
                      locals: {photo_url: photo_url}) %>
         </div>
-        <div class="slidingImg">
-          <%= render(partial: 'item_photo',
-                     locals: {photo_url: photo_url2}) %>
-        </div>
-        <div class="slidingImg">
-          <%= render(partial: 'item_photo',
-                     locals: {photo_url: photo_url3}) %>
-        </div>
+        <% unless(photo_url2.nil? || photo_url2.empty?) %>
+          <div class="slidingImg">
+            <%= render(partial: 'item_photo',
+                       locals: {photo_url: photo_url2}) %>
+          </div>
+        <% end %>
+        <% unless(photo_url3.nil? || photo_url3.empty?) %>
+          <div class="slidingImg">
+            <%= render(partial: 'item_photo',
+                       locals: {photo_url: photo_url3}) %>
+          </div>
+        <% end %>
     <% end %>
         <div class="card--carousel">
           <a onclick="previousItem()" class="card--carousel__left">
