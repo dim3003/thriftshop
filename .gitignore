@@ -29,8 +29,6 @@
 
 # Ignore the assets
 
-public/assets/*
-
 public/uploads/*
 
 run-production.sh
